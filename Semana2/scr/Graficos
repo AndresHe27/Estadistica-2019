@@ -1,0 +1,23 @@
+#Ejerciciio semana 2
+#Cargar los datos de corvus
+data(corvus)
+
+View(corvus)
+#la funcion par define parametros previamente para todos los plots
+par(col.lab="blue",col.main="green")
+#generar histogramas
+hist(corvus$wing, main = 'Longitud del ala de genero corvus',col =1:6,ylab = "Frecuencia",xlab="rango de longitud de ala ")
+par(col.lab="blue")
+hist(corvus$bill, main = 'Longitud del pico de genero corvus',col =11:16,ylab = "Frecuencia",xlab="rango de longitud de pico ")
+#inventarse datos sobre medidas de la mano en personas.
+longitud_mano<-abs(rnorm(10000, 17, 2))
+head(longitud_mano)
+longitud_mano
+#mostrar valor minimo
+min(longitud_mano)
+#mostrar valor maximo
+max(longitud_mano)
+#mostrar el rango
+range(longitud_mano)
+#generar histograma sobre los datos de las manos
+hist(longitud_mano, main = 'Frecuencias de la longitud de la mano',col =1:6,ylab = "Frecuencia",xlab="rango de longitud de la mano ")
