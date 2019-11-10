@@ -1,0 +1,21 @@
+##Realizar un muestreo aleatorio
+k<-50
+N<-5000
+n<-100
+#primero se genera el numero a partir del cual inciciará el muestreo en la poblacion de 5000  peces ordenados por tamaño
+primero<-sample(1:50,1)
+#se generan unos datos "inventados" sobre las medidas de nuestra poblacion de  5000 peces
+Peces<-abs(rnorm(N, 15, 2))
+#mostrar los primneros datos
+head(Peces)
+#ahora se genera el muestreo, creado una secuencia de nuemeros que va desde el "primero" hasta el 5000 tomando uno cada 50,
+muestreo<-seq(primero,N,k)
+muestreo
+#ahora se muestran las medidas de los peces "seleccionados"
+medidas_peces<-Peces[muestreo]
+#un resumen de los estadisticos
+summary(medidas_peces)
+describe.by(medidas_peces)
+#generar los plots
+hist(medidas_peces)
+boxplot(medidas_peces)
